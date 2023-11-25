@@ -37,7 +37,6 @@ spring:
 
   jpa:
     defer-datasource-initialization: true
-#    database: POSTGRESQL
     show-sql: true
     hibernate:
       ddl-auto: create-drop
