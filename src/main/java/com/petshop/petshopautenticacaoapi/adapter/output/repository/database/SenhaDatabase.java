@@ -27,9 +27,6 @@ public class SenhaDatabase implements Serializable {
     @Column(name = "fk_id_usuario")
     private Long idUsuario;
 
-//    public SenhaDatabase() {
-//    }
-
     public SenhaDatabase(SenhaDomain senhaDomain) {
         this.setSenha(senhaDomain.getSenha());
         this.setId(senhaDomain.getId());

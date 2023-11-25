@@ -1,7 +1,6 @@
 package com.petshop.petshopautenticacaoapi.adapter.input.http;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.petshop.petshopautenticacaoapi.adapter.output.repository.cache.SenhaRedisRepository;
 import com.petshop.petshopautenticacaoapi.application.domain.SenhaDomain;
 import com.petshop.petshopautenticacaoapi.application.service.SenhaService;
 import org.springframework.http.HttpStatus;

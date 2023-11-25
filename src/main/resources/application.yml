@@ -37,7 +37,6 @@ spring:
 
   jpa:
     defer-datasource-initialization: true
-#    database: POSTGRESQL
     show-sql: true
     hibernate:
       ddl-auto: create-drop
@@ -48,17 +47,4 @@ spring:
 
 redis:
   host: localhost
-  port: 6379
-
----
-spring:
-  config:
-    activate:
-      on-profile: docker
-
-server:
-  port: 9999
-
-redis:
-  host: [YOUR_IP]
   port: 6379
