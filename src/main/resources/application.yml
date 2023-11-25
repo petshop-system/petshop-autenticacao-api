@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: petshop-autenticacao-api
+  web:
+    resources:
+      add-mappings: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+      enabled-by-default: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /petshop-autenticacao-api
+    encoding:
+      charset: UTF-8
+      enabled: true
+  max-http-request-header-size: 48000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/petshop-system
+    username: petshop-autenticacao
+    password: test1234
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    defer-datasource-initialization: true
+#    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  sql:
+    init:
+      mode: always
+      platform: postgres
+
+redis:
+  host: localhost
+  port: 6379
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+server:
+  port: 9999
+
+redis:
+  host: [YOUR_IP]
+  port: 6379
